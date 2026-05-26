@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MCQs_Controller;
 use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,9 @@ Route::get("category/delete/{id}",[CategoryController::class,'deleteCategory']);
 Route::get("category/edit/{id}",[CategoryController::class,'editCategory']);
 
 Route::get("add-quiz",[QuizController::class,'addQuiz']);
+
+Route::post('add-mcqs',[MCQs_Controller::class,'addMCQs']);
+
+Route::get('end-quiz',[MCQs_Controller::class,'endQuiz']);
+
+Route::get('show-mcqs/{id}',[MCQs_Controller::class,'showMCQs']);

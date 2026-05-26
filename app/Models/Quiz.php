@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     //
+    protected $table = "quizzes";
+    protected $id= "quiz_id";
 }
