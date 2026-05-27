@@ -32,4 +32,6 @@ Route::post('add-mcqs',[MCQs_Controller::class,'addMCQs']);
 
 Route::get('end-quiz',[MCQs_Controller::class,'endQuiz']);
 
-Route::get('show-mcqs/{id}',[MCQs_Controller::class,'showMCQs']);
+Route::get('show-mcqs/{id}/{quizName}',[MCQs_Controller::class,'showMCQs']);
+
+Route::get('quiz_list/{id}/{category}',[QuizController::class,'showQuiz']);

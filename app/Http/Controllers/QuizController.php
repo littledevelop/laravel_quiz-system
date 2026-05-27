@@ -40,4 +40,17 @@ class QuizController extends Controller
             return view('admin-login');
         }
     }
+
+    public function showQuiz(int $id, string $category)
+    {
+        // return ([$id,$category]);
+        $admin = Session::get('admin');
+        if ($admin) {
+            $quizData = Quiz::where('category_id', $id)->get();
+            if ($quizData)
+                return view('Quiz_List', ['category_name' => $category, 'quizData' => $quizData]);
+        } else {
+            return view('admin-login');
+        }
+    }
 }

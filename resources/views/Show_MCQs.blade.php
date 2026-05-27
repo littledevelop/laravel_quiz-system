@@ -7,7 +7,7 @@
     <body>
         <x-navbar name={{ $name }}></x-navbar>
         <div class="bg-gray-100 flex flex-col items-center min-h-screen pt-10"> 
-            <h2 class="text-2xl mb-6 text-center text-gray-800">All Current Quiz's MCQS</h2>
+            <h2 class="text-2xl mb-6 text-center text-gray-800">Quiz Name: {{$quizName}}</h2>
             <span class="text-yellow-500 text-md"><a href="/add-quiz">Back</a></span>
             <div class="w-200">
                 {{-- <h1 class="text-xl text-blue-500"></h1> --}}

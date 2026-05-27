@@ -59,11 +59,12 @@ class MCQs_Controller extends Controller
         return redirect('/admin-categories');
     }
 
-    function showMCQs(int $id){
+    function showMCQs(int $id,string $quizName){
         $admin = Session::get('admin');
-        $mcqs= MCQ::where('quiz_id',$id)->get();        
-        if($admin)
-            return view('Show_MCQs',['name'=>$admin->name,"mcqs"=>$mcqs]);
+        if($admin){
+            $mcqs= MCQ::where('quiz_id',$id)->get();        
+            return view('Show_MCQs',['name'=>$admin->name,"mcqs"=>$mcqs,"quizName"=>$quizName]);
+        }
         else
             return view('admin-login');
     }
